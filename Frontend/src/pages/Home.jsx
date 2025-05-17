@@ -16,9 +16,11 @@ import SendIcon from "@mui/icons-material/Send";
 import Answer from "../components/Answer";
 
 const sampleQuestions = [
-  "What were the total sales last month?",
-  "Show me the top 5 customers by revenue.",
-  "Which product has the highest return rate?",
+  "Find products that are sold despite having missing price information how much is revenue due to those products",
+  "Which products contribute the most to revenue but are rarely sold (i.e., low quantity but high total sales value)?",
+  "display each categories revenue percetage",
+  "Which customers have made purchases where the total price does not match the unit price times quantity , how much difference is there?",
+  "Are cheaper items selling better than expensive ones?",
 ];
 
 const Home = () => {
@@ -150,14 +152,21 @@ const Home = () => {
               </Typography>
               <Stack direction="column" spacing={1} mt={2}>
                 {sampleQuestions.map((sample, i) => (
-                  <Button
+                  <Typography
                     key={i}
                     variant="outlined"
                     onClick={() => handleSampleClick(sample)}
-                    sx={{ textAlign: "left", color: "#90caf9", borderColor: "#90caf9" }}
+                    sx={{
+                      textAlign: "left",
+                      color: "#90caf9",
+                      borderColor: "#90caf9",
+                      padding: "10px 20px",
+                      border: "0.5px solid #90caf9",
+                      borderRadius: "10px"
+                    }}
                   >
                     {sample}
-                  </Button>
+                  </Typography>
                 ))}
               </Stack>
             </Paper>
